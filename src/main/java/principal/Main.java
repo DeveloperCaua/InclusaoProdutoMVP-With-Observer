@@ -5,7 +5,7 @@
 package principal;
 
 import model.ProdutoCollection;
-import presenter.GerenciadorProduto;
+import presenter.PrincipalPresenter;
 
 /**
  *
@@ -15,6 +15,6 @@ import presenter.GerenciadorProduto;
 public class Main {
     public static void main(String[] args) {
         ProdutoCollection produtos = new ProdutoCollection();
-        new GerenciadorProduto(produtos);
+        new PrincipalPresenter(produtos);
     }
 }

@@ -7,7 +7,7 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import presenter.IGerenciadorProdutoObserver;
+import observer.IGerenciadorProdutoObserver;
 
 /**
  *
