@@ -30,7 +30,14 @@ public class ListarProdutosPresenter implements IGerenciadorProdutoObserver {
     private void configuraView() {
         listarProdutosView.getBtnRemover().addActionListener(e -> {
             int selectedRow = listarProdutosView.getTblProdutos().getSelectedRow();
-            if (selectedRow != -1) {
+            if (selectedRow == -1) {
+                JOptionPane.showMessageDialog(
+                    listarProdutosView,
+                    "Nenhum produto selecionado para remoção.",
+                    "Aviso",
+                    JOptionPane.WARNING_MESSAGE
+                );                
+            } else{
                 int confirmacao = JOptionPane.showConfirmDialog(
                     listarProdutosView,
                     "Você tem certeza que deseja excluir este produto?",
