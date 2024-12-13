@@ -50,7 +50,7 @@ public class InsercaoProdutosPresenter{
         }
 
         Produto produto = new Produto(nome, preco, quantidadeEstoque);
-        produtos.incluir(produto); // Notifica os observers
+        produtos.incluir(produto);
 
         JOptionPane.showMessageDialog(insercaoProdutoView, "Produto incluído com sucesso!");
         limparCampos();

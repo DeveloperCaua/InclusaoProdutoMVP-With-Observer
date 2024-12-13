@@ -9,7 +9,7 @@ import presenter.PrincipalPresenter;
 
 /**
  *
- * @author Cauã teste
+ * @author Cauã
  */
 
 public class Main {
