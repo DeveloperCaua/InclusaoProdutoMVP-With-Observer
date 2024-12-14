@@ -9,7 +9,7 @@ package model;
  * @author Cauã
  */
 public class Produto {
-    private String nome;
+    private final String nome;
     private final double preco;
     private final int quantidadeEstoque;
 

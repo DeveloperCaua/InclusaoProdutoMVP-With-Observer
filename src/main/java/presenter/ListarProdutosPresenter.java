@@ -24,7 +24,6 @@ public class ListarProdutosPresenter implements IGerenciadorProdutoObserver {
         this.produtos.adicionarObserver(this);
         this.listarProdutosView = new ListarProdutosView();
         configuraView();
-        atualizarTabela();
     }
 
     private void configuraView() {
@@ -65,7 +64,8 @@ public class ListarProdutosPresenter implements IGerenciadorProdutoObserver {
         }
     }
 
-    private void atualizarTabela() {
+    @Override
+    public void atualizar(ProdutoCollection colecaoProdutos) {
         DefaultTableModel model = (DefaultTableModel) listarProdutosView.getTblProdutos().getModel();
         model.setRowCount(0);
 
@@ -76,11 +76,6 @@ public class ListarProdutosPresenter implements IGerenciadorProdutoObserver {
                 produto.getQuantidadeEstoque()
             });
         }
-    }
-
-    @Override
-    public void atualizar() {
-        atualizarTabela();
     }
 
     public void mostrarView() {

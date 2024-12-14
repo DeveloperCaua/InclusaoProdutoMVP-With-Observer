@@ -9,7 +9,6 @@ import model.ProdutoCollection;
 import observer.IGerenciadorProdutoObserver;
 import view.PrincipalView;
 
-
 public class PrincipalPresenter implements IGerenciadorProdutoObserver {
     private final PrincipalView principalView;
     private final ProdutoCollection produtos;
@@ -31,16 +30,12 @@ public class PrincipalPresenter implements IGerenciadorProdutoObserver {
             new ListarProdutosPresenter(produtos).mostrarView();
         });
 
-        atualizarBarraDeStatus();
-    }
-
-    private void atualizarBarraDeStatus() {
-        int totalProdutos = produtos.getProdutos().size();
-        principalView.getTxtQuantidadeProdutos().setText(String.valueOf(totalProdutos));
+        atualizar(produtos);
     }
 
     @Override
-    public void atualizar() {
-        atualizarBarraDeStatus();
+    public void atualizar(ProdutoCollection colecaoProdutos) {
+        int totalProdutos = produtos.getProdutos().size();
+        principalView.getTxtQuantidadeProdutos().setText(String.valueOf(totalProdutos));
     }
 }

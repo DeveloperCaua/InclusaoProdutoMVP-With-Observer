@@ -5,6 +5,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import observer.IGerenciadorProdutoObserver;
@@ -14,7 +15,7 @@ import observer.IGerenciadorProdutoObserver;
  * @author Cauã
  */
 public class ProdutoCollection {
-    private List<IGerenciadorProdutoObserver> observers = new ArrayList<>();
+    private final List<IGerenciadorProdutoObserver> observers = new ArrayList<>();
     private final List<Produto> produtos;
 
     public ProdutoCollection() {
@@ -22,16 +23,20 @@ public class ProdutoCollection {
     }
     
     public void adicionarObserver(IGerenciadorProdutoObserver observer) {
+        if(observer == null) throw new IllegalArgumentException("O observador é nulo.");
+        
         observers.add(observer);
     }
 
     public void removerObserver(IGerenciadorProdutoObserver observer) {
+        if(observer == null) throw new IllegalArgumentException("O observador é nulo.");
+        
         observers.remove(observer);
     }
 
     private void notificarObservers() {
         for (IGerenciadorProdutoObserver observer : observers) {
-            observer.atualizar();
+            observer.atualizar(this);
         }
     }
 
@@ -54,7 +59,7 @@ public class ProdutoCollection {
     }
     
     public List<Produto> getProdutos() {
-        return produtos;
+        return Collections.unmodifiableList(produtos);
     }
    
     public Optional<Produto> findProdutoByNome(String nome) {

@@ -4,10 +4,12 @@
  */
 package observer;
 
+import model.ProdutoCollection;
+
 /**
  *
  * @author Cauã
  */
 public interface IGerenciadorProdutoObserver {
-    public void atualizar();
+    public void atualizar(ProdutoCollection colecaoProdutos);
 }
