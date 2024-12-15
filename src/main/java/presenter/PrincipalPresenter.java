@@ -29,8 +29,6 @@ public class PrincipalPresenter implements IGerenciadorProdutoObserver {
         principalView.getBtnListagemProdutos().addActionListener(e -> {
             new ListarProdutosPresenter(produtos).mostrarView();
         });
-
-        atualizar(produtos);
     }
 
     @Override
