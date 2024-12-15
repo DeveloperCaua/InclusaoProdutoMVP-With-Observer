@@ -36,7 +36,7 @@ public class ProdutoCollection {
 
     private void notificarObservers() {
         for (IGerenciadorProdutoObserver observer : observers) {
-            observer.atualizar(this);
+            observer.atualizar();
         }
     }
 

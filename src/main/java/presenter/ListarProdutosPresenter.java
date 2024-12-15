@@ -65,7 +65,7 @@ public class ListarProdutosPresenter implements IGerenciadorProdutoObserver {
     }
 
     @Override
-    public void atualizar(ProdutoCollection colecaoProdutos) {
+    public void atualizar() {
         DefaultTableModel model = (DefaultTableModel) listarProdutosView.getTblProdutos().getModel();
         model.setRowCount(0);
 

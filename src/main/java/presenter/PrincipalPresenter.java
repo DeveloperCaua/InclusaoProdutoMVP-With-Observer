@@ -32,7 +32,7 @@ public class PrincipalPresenter implements IGerenciadorProdutoObserver {
     }
 
     @Override
-    public void atualizar(ProdutoCollection colecaoProdutos) {
+    public void atualizar() {
         int totalProdutos = produtos.getProdutos().size();
         principalView.getTxtQuantidadeProdutos().setText(String.valueOf(totalProdutos));
     }

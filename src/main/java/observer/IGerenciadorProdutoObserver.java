@@ -11,5 +11,5 @@ import model.ProdutoCollection;
  * @author Cauã
  */
 public interface IGerenciadorProdutoObserver {
-    public void atualizar(ProdutoCollection colecaoProdutos);
+    public void atualizar();
 }
